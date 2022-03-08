@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
 
@@ -9,9 +9,12 @@ import Game from './components/Game';
 
 
 function App() {
+  const [badges, setBadges] = useState([])
+
   return (
     <div>
     <Game />
+    <BadgeScreen badges={badges}/>
   </div>
   );
 }
