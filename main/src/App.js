@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from 'react';
+
+import {
+  RecoilRoot,
+  atom,
+  selector,
+  useRecoilState,
+  useRecoilValue,
+} from 'recoil';
+
+
 import { BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
 
-import HomeScreen from './components/HomeScreen';
-import BadgeScreen from './components/BadgeScreen';
-import LeaderboardScreen from './components/LeaderboardScreen';
-import Game from './components/Game';
+import Game from "./components/gamefiles/Game"
 
 
 function App() {
-  const [badges, setBadges] = useState([])
 
   return (
-    <div>
-    <Game />
-    <BadgeScreen badges={badges}/>
-  </div>
+
+    <RecoilRoot>
+      <Game />
+    </RecoilRoot>
+
   );
 }
 

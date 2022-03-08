@@ -1,8 +1,12 @@
 import React from 'react'
+import World from './gamesrc/components/World'
+
+
+
 
 function Game() {
   return (
-    <div>Game</div>
+      <World />
   )
 }
 
