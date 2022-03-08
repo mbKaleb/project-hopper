@@ -1,28 +1,18 @@
 import React, { useState } from 'react';
-import {Switch, Route} from "react-router-dom";
-
-
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route} from "react-router-dom";
 import './App.css';
+
+import HomeScreen from './components/HomeScreen';
+import BadgeScreen from './components/BadgeScreen';
+import LeaderboardScreen from './components/LeaderboardScreen';
+import Game from './components/Game';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+    <Game />
+  </div>
   );
 }
 

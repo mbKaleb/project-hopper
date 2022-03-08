@@ -4,6 +4,8 @@
 
 ### `npm install`
 
+### `npm recoil`
+
 ### `npm install react-dom`
 
 ### `npm install react-router-dom`
