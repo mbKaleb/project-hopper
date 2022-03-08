@@ -36,3 +36,42 @@
     transform: rotate(360deg);
   }
 }
+.cards {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 1rem;
+  box-shadow: 0 0 7px 0 #ddd;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+
+.card .image {
+  height: 225px;
+  position: relative;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.card .image img {
+  max-width: 300px;
+  max-height: 225px;
+  width: auto;
+  height: auto;
+}
+
+.card .details {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.card .details strong {
+  font-family: serif;
+  font-size: 1rem;
+}
+
