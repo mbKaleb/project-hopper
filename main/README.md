@@ -79,6 +79,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### `npm install react-dom`
 
-### `npm install react-router-dom`
+### `npm install react-router-dom@5`
 
 https://reactrouter.com/web/guides/quick-start

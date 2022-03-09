@@ -17,7 +17,8 @@ function Player({src}) {
     let yVar = player.y
 
     //https://www.omnicalculator.com/math/linear-independence
-    //translate x, y state into vector instructions and compute them on a linear slope y=mx+b
+
+    //translate {x, y} state into vector instructions and compute them as style instructions
     let xderiv = 7.14*((.753)*((xVar) + (yVar))) -2
  
     let yDeriv = 7.14*(yVar - xVar) +2//y+1 = yderiv+1/2

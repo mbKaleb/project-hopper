@@ -12,7 +12,6 @@ function Inputs() {
   });
   const [player, setPlayer] = useRecoilState(playerState)
 
-
   const keyPressHandler = useCallback((e) => {
     console.log("keypress", e);
     if (e.preventDefault) {
