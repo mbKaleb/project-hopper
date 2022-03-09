@@ -1,7 +1,6 @@
 import React from "react";
 
 function Tile({ src, x, y, z }) {
-  console.log(x)
   x = x * 5.42;
   y = y * 11.75;
 

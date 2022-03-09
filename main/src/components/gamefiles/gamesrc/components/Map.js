@@ -20,7 +20,10 @@ function Map() {
     <TileRow src={grass} rowX={0} rowY={0} rowZ={99}/>
     <TileRow src={grass} rowX={5.5} rowY={-7.25} rowZ={98}/>
     <TileRow src={grass} rowX={11} rowY={-14.2} rowZ={97}/>
-    <TileRow src={grass} rowX={16.5} rowY={-21.35} rowZ={96}/>
+    <TileRow src={grass} rowX={16.5} rowY={-21.25} rowZ={96}/>
+    <TileRow src={grass} rowX={22} rowY={-28.35} rowZ={95}/>
+    <TileRow src={grass} rowX={27.5} rowY={-35.4} rowZ={94}/>
+
 
     </div>)
     

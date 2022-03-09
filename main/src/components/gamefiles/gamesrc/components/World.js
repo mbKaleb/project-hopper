@@ -16,7 +16,7 @@ function World() {
   return (
     <div className="world">
     <Map />
-    <Player src={frog}/>
+    <Player src={frog} x={0} y={6}/>
     
     </div>
   )
