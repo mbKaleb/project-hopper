@@ -1,3 +1,9 @@
+/* layout */
+body {
+  background-color: #87E4D4;
+}
+
+/* App */
 .App {
   text-align: center;
 }
@@ -35,4 +41,165 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* navbar */
+.nav-bar:hover {
+  box-shadow: 0 0 11px #2fb9a2; 
+}
+
+/* buttons */
+.button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+  color: var(--primary);
+  background-color: var(--background);
+  border: 2px solid var(--dark-turquoise);
+  transition: background-color 0.2s;
+  width: 500px;
+}
+
+.button:hover,
+.button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+/* home */
+.home {
+  text-align: center;
+  width: 500 px;
+  font-size: 30px;
+}
+
+.button-area {
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 500px;
+}
+
+#homeBtn {
+  background-color: #2fb9a2;
+  font-size: 45px;
+  color: white;
+  margin: 50px;
+  -webkit-text-stroke: 1px black;
+}
+
+#gameBtn {
+  background-color: #40FF6A;
+  font-size: 35px;
+  color: white;
+  margin-bottom: 25px;
+  -webkit-text-stroke: 1px black;
+}
+
+#badgeBtn {
+  background-color: #9440FF;
+  font-size: 35px;
+  color: white;
+  margin-bottom: 25px;
+  -webkit-text-stroke: 1px black;
+}
+
+#leaderBtn {
+  background-color: #FFC700;
+  font-size: 35px;
+  color: white;
+  margin-bottom: 25px;
+  -webkit-text-stroke: 1px black;
+}
+
+/* links */
+a {
+  color: var(--color);
+  border-bottom: 1px solid var(--color);
+  text-decoration: none;
+}
+
+/* cards */
+.cards {
+  background-color: 87E4D4;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card:hover {
+  box-shadow: 0 0 25px #7a37d1; 
+}
+
+.card {
+  margin: 1rem;
+  box-shadow: 0 0 7px 0 #2fb9a2;
+  border-radius: 5px;
+  width: 300px;
+  background-color: #BE8BFF;
+}
+
+.card .image {
+  height: 225px;
+  position: relative;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+
+.card .image img {
+  max-width: 300px;
+  max-height: 225px;
+  width: auto;
+  height: auto;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.card .details {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.card .details strong {
+  font-family: serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* leaderboard */
+.leader-board {
+  height: 100%; 
+  width: 100%; 
+  text-align: center;
+  font-size: 4rem;
+}
+
+.leader {
+  width: 70%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+td, tr {
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px;
+  text-align: center;
+  font-size: 2rem;
+  color: #0b2a49;
+}
+
+tr {
+  background-color: rgb(255,233,11);
+  font-size: 14px;
+  font-weight: 600;
+  color: #34495e;
+  text-align: center;
+  font-size: 3rem;
 }

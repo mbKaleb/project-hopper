@@ -9,7 +9,6 @@ function BadgeContainer({ image, description, status, id }) {
       <div className="details">
         <strong>{description}</strong>
       </div>
-      
     </div>
   )
 }

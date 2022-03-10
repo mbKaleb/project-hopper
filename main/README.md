@@ -81,4 +81,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### `npm install react-router-dom@5`
 
+### `json-server --watch db.json`
+
 https://reactrouter.com/web/guides/quick-start
+
+
+### Base URl "http://localhost:3000"
+### Home URL "http://localhost:3000/badges"
+
+deliverables a way to tend the games-state
+game sgtate, control, points sent to a post

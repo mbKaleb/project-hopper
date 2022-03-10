@@ -8,12 +8,60 @@ import {
   useRecoilValue,
 } from 'recoil';
 
-
-import { BrowserRouter, Switch, Route} from "react-router-dom";
+import { Switch, Route} from "react-router-dom";
 import './App.css';
-
+import NavBar from './components/NavBar'
+import BadgeScreen from './components/BadgeScreen'
+import LeaderboardScreen from './components/LeaderboardScreen'
+import HomeScreen from './components/HomeScreen'
 import Game from "./components/gamefiles/Game"
 
+
+function App() {
+  const baseUrl = "http://localhost:3000"
+  const [badges, setBadges] = useState([])
+  
+  useEffect(() => {
+    fetch(baseUrl + '/badges')
+    .then(r => r.json())
+    .then(setBadges)
+  }, [])
+
+  
+
+  return (
+    <div>
+      <NavBar />
+      <Switch>
+        <Route exact path="/">
+          <HomeScreen />
+        </Route>
+        <Route path = "/badgescreen">
+          <BadgeScreen badges={badges}/>
+        </Route>
+        <Route path = "/leaderboardscreen">
+          <LeaderboardScreen />
+        </Route>
+        <Route path="/gamescreen">
+
+          <RecoilRoot>
+            <Game />
+          </RecoilRoot>
+          
+        </Route>
+      </Switch>
+    </div>
+    
+
+  );
+}
+
+export default App;
+
+
+
+
+/*
 
 function App() {
 
@@ -24,37 +72,6 @@ function App() {
     </RecoilRoot>
 
   );
-}
-
-export default App;
-
-
-
-/*
-
-function App(){
-  const [page, setPage] = useState("/defaultpage on refresh")
-
-
-  return (
-    <div>
-      <NavBar onChangePage={setPage} />
-      <Switch>
-      <Route path = "/home">
-        <Home />
-      </Route>
-
-      <Route path = "/about">
-        <About />
-      </Route>
-
-      <Route path = "/projects">
-        <Projects />
-      </Route>
-
-      </Switch>
-    </div>
-    );
 }
 
 export default App;

@@ -8,7 +8,7 @@ function Player({src}) {
         key: 'playerState',
         default: {
             x: 1,
-            y: 1,
+            y: 5,
         },
     })
     const player = useRecoilValue(playerState)

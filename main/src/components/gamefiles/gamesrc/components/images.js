@@ -7,7 +7,6 @@ import water from"../images/car.png";
 
 export {
     grass,
-
     frog,
 
 }

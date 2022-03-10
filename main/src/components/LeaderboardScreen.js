@@ -1,22 +1,25 @@
 import React from 'react'
-import { useState } from 'react'
-import data from './mock-data.json';
-import '../index.css'
+import '../App.css'
+import { leaderboardData } from './leaderboardData'
 
 function LeaderboardScreen() {
-  const [scores, setScores] = useState(data);
+  // const [scores, setScores] =useState(data);
   
   return (
-    <div style={{backgroundColor: '#F5C63C', height:'100%', width:'100%', textAlign:'center'}}>
+    <div className="leader-board">
       <h3>Leaderboard</h3>
-        <tbody>
-          {scores.map((highScore) => (
+        <table className="leader">
             <tr>
+              <th>Name</th>
+              <th>Score</th>
+            </tr>
+          {leaderboardData.map((highScore) => (
+            <tr key={highScore.id}>
               <td>{highScore.name}</td>
               <td>{highScore.score}</td>
             </tr>
        ))}
-        </tbody>
+        </table>
       </div>
   );
 }
