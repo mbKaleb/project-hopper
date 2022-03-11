@@ -24,11 +24,11 @@ https://reactrouter.com/web/guides/quick-start
 
 #### Authors
 
-# `Kristina` 
+# `Kristina Peru` 
 ## Linkedin `https://www.linkedin.com/in/kristina-peru-205557189/`
 ## GitHub `https://github.com/krisperu`
 
-# `Kaleb Franks`
+# `Kaleb Franken`
 ## Linkedin `https://www.linkedin.com/in/kaleb-franken-315b53232/`
 ## Github `https://github.com/Skywrithin`
 
