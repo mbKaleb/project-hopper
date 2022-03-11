@@ -28,10 +28,10 @@ https://reactrouter.com/web/guides/quick-start
 ## Linkedin `https://www.linkedin.com/in/kristina-peru-205557189/`
 ## GitHub `https://github.com/krisperu`
 
-# `Kaleb Franken`
-## Linkedin `https://www.linkedin.com/in/kaleb-franken-315b53232/`
-## Github `https://github.com/Skywrithin`
-
 # `Jack Smith`
 ## Linkedin `https://www.linkedin.com/in/jack-smith-932525192/`
 ## Github `https://github.com/JckSmith`
+
+# `Kaleb Franken`
+## Linkedin `https://www.linkedin.com/in/kaleb-franken-315b53232/`
+## Github `https://github.com/Skywrithin`
