@@ -9,8 +9,11 @@ function Player({src}) {
         default: {
             x: 1,
             y: 5,
+            dead: false,
+            id: Math.random()
         },
     })
+    
     const player = useRecoilValue(playerState)
 
     let xVar = player.x
@@ -19,11 +22,10 @@ function Player({src}) {
     //https://www.omnicalculator.com/math/linear-independence
 
     //translate {x, y} state into vector instructions and compute them as style instructions
-    let xderiv = 7.14*((.753)*((xVar) + (yVar))) -2
- 
-    let yDeriv = 7.14*(yVar - xVar) +2//y+1 = yderiv+1/2
+    const constSlope = 7.225
+    let xderiv = constSlope*((.75)*((xVar) + (yVar))) -3.3
+    let yDeriv = constSlope*(yVar - xVar) +1.2
     
-    console.log(yDeriv)
 
   return (
     <img

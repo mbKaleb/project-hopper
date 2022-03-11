@@ -71,6 +71,16 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Phase-2-project
 
+
+
+
+
+
+
+
+
+
+
 ## Available Scripts
 
 ### `npm install`
@@ -82,6 +92,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### `npm install react-router-dom@5`
 
 ### `json-server --watch db.json`
+
+## `npm start`
 
 https://reactrouter.com/web/guides/quick-start
 

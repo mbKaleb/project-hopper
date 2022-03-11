@@ -4,7 +4,7 @@ function BadgeContainer({ image, description, status, id }) {
   return (
     <div className="card">
       <div className="image">
-        <img src={image} alt={id} />
+        <img className={status} src={image} alt={id} />
       </div>
       <div className="details">
         <strong>{description}</strong>

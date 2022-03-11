@@ -20,11 +20,18 @@ import Game from "./components/gamefiles/Game"
 function App() {
   const baseUrl = "http://localhost:3000"
   const [badges, setBadges] = useState([])
+  const [scores, setScores] = useState([])
   
   useEffect(() => {
     fetch(baseUrl + '/badges')
     .then(r => r.json())
     .then(setBadges)
+  }, [])
+
+  useEffect(() => {
+    fetch(baseUrl + '/leaderboard')
+    .then(r => r.json())
+    .then(setScores)
   }, [])
 
   
@@ -40,7 +47,7 @@ function App() {
           <BadgeScreen badges={badges}/>
         </Route>
         <Route path = "/leaderboardscreen">
-          <LeaderboardScreen />
+          <LeaderboardScreen scores={scores} setScores={setScores}/>
         </Route>
         <Route path="/gamescreen">
 
@@ -57,24 +64,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-/*
-
-function App() {
-
-  return (
-
-    <RecoilRoot>
-      <Game />
-    </RecoilRoot>
-
-  );
-}
-
-export default App;
-
-*/
-

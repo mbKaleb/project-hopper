@@ -4,40 +4,81 @@
       "id": 1,
       "description": "First Game Played",
       "image": "./images/First-Time.jpg",
-      "status": "unlocked"
+      "status": "Unlocked"
     },
     {
       "id": 2,
       "description": "Died Five Times",
       "image": "./images/First-Death.jpg",
-      "status": "locked"
+      "status": "Locked"
     },
     {
       "id": 3,
       "description": "Ten Games Played",
       "image": "./images/First-Ten.jpg",
-      "status": "locked"
+      "status": "Locked"
     },
     {
       "id": 4,
       "description": "Fifty Games Played",
       "image": "./images/First-Fifty.jpg",
-      "status": "locked"
+      "status": "Locked"
     },
     {
-      "id": 5
+      "id": 5,
+      "description": "Unlock Achievment",
+      "image": "./images/Locked.jpg",
+      "status": "Locked"
     },
     {
-      "id": 6
+      "id": 6,
+      "description": "Unlock Achievment",
+      "image": "./images/Locked.jpg",
+      "status": "Locked"
     },
     {
-      "id": 7
+      "id": 7,
+      "description": "Unlock Achievment",
+      "image": "./images/Locked.jpg",
+      "status": "Locked"
     },
     {
-      "id": 8
+      "id": 8,
+      "description": "Unlock Achievment",
+      "image": "./images/Locked.jpg",
+      "status": "Locked"
     }
   ],
-  "games": [
-    {}
+  "leaderboard": [
+    {
+      "id": 1,
+      "name": "Gandalf",
+      "score": 104
+    },
+    {
+      "id": 2,
+      "name": "Aragorn",
+      "score": 94
+    },
+    {
+      "id": 3,
+      "name": "Sam",
+      "score": 78
+    },
+    {
+      "id": 4,
+      "name": "Gimli",
+      "score": 67
+    },
+    {
+      "id": 5,
+      "name": "Frodo",
+      "score": 58
+    },
+    {
+      "name": "Golom",
+      "score": "50",
+      "id": 6
+    }
   ]
 }

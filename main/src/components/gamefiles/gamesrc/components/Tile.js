@@ -1,14 +1,17 @@
 import React from "react";
 
-function Tile({ src, x, y, z }) {
-  x = x * 5.42;
-  y = y * 11.75;
+function Tile({ src, x, y}) {
+  
+  x= x *5.4
+  y = y *12
+
+
 
   return (
     <img
       alt="map tile"
       className="tile"
-      style={{ left: `${x}%`, top: `${y}%`, zIndex: z }}
+      style={{ left: `${x}%`, top: `${y}%`}}
       src={src}
     />
   );

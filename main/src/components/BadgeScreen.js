@@ -13,10 +13,14 @@ function BadgeScreen({ badges }) {
         /> 
        </div>
     ) )
+
   return (
-    <ul className="cards">
+    <>
+      <h3>Achievements</h3>
+      <ul className="cards">
         {badgesItem}
-    </ul>
+      </ul>
+    </>
   )
 }
 

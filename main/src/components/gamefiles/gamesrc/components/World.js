@@ -1,9 +1,11 @@
 import React from 'react'
 import Map from './Map'
 import Player from './Player'
+import Car from './Car'
 
 import {
-  frog
+  frog,
+  car,
 } from "./images"
 
 
@@ -16,7 +18,9 @@ function World() {
   return (
     <div className="world">
     <Map />
-    <Player src={frog} x={0} y={6}/>
+    <Player src={frog} x={1} y={1}/>
+    <Car src={car} x={1} y={9} />
+    
     
     </div>
   )
