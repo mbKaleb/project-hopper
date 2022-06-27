@@ -1,10 +1,10 @@
-# `Phase-2-project`
-
-## `Run these scripts in order to launch app`
+# Phase-2-project
 
 ## Available Scripts
 
-```npm install```
+ `Run these scripts in order to launch app`
+
+`npm install`
 
 `npm install recoil`
 
