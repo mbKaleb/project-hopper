@@ -2,7 +2,7 @@
 
 ## About
 
-This is my first project with React and was co-developed by Myself,
+This is my first project with React and was co-developed by Myself
 and my two friends Kristina Peru and Jack Smith.
 Why frogger? Well whats more reactive than a game? So we chose to make a game, hope you enjoy!
 
