@@ -4,7 +4,7 @@
 
 ## Available Scripts
 
-`npm install`
+```npm install```
 `npm install recoil`
 `npm install react-dom`
 `npm install react-router-dom@5`
