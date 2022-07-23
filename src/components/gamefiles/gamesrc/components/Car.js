@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { useInterval } from '../hooks/useInterval';
 
 export default function Car({ carInstance }) {

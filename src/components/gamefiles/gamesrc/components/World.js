@@ -13,10 +13,6 @@ import {
 
 
 function World({ characterState, carArrSet }) {
-
-
-
-
   return (
     <div className="world">
     <Map />

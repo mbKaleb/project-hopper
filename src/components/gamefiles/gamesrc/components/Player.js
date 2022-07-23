@@ -1,4 +1,4 @@
-import { useState, useCallback} from 'react'
+import { useState, useCallback, useEffect} from 'react'
 import { useInterval } from "../hooks/useInterval"
 
 export default function Player({characterState}) {
@@ -12,12 +12,17 @@ export default function Player({characterState}) {
     let xderiv = constSlope*((.75)*((xVar) + (yVar))) -3.3
     let yDeriv = constSlope*(yVar - xVar) +1.2
     
+    useEffect(() => {
+      console.log(characterState)
+    }, [characterState])
+    
+
 
   return (
     <img
     src={characterState.character}
     alt="character"
     className={'player'}
-    style={{left:`${xderiv}%`, top:`${yDeriv}%`, zIndex:1000}}/>
+    style={{left:`${xderiv}%`, top:`${yDeriv}%`, zIndex:2000}}/>
   )
 }

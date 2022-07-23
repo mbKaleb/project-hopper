@@ -3,19 +3,21 @@ import { useState, useEffect } from 'react'
 import Inputs from './gamesrc/components/Inputs'
 import World from './gamesrc/components/World'
 
+import { useInterval } from './gamesrc/hooks/useInterval';
+
 import { baseURL } from '../constants';
 
 import { grass, frog, car  } from './gamesrc/components/images';
 
 function Game() {
-
-  const [characterState, setCharacterState] = useState({
+  const defaultPlayerState = {
     id: 1,
     x:1,
     y:5,
     character: frog,
-    allowInput:false
-  })
+    allowInput:true
+  }
+  const [characterState, setCharacterState] = useState({...defaultPlayerState})
   const carInstance = (x,y=9, speed) => {return({id:{x,y},x,y,speed,src:car})}
   const [carArrSet, setCarArrSet] = useState([
     carInstance(3,10,140),
@@ -23,12 +25,13 @@ function Game() {
     carInstance(7,8,130)
   ]);
 
-  const hasReachedGoal = (player) => { //check if frog has x of a high enough number/specific number
-    return player.x > 9;
+  const hasReachedGoal = (player=characterState) => {
+    return (player.x === 9);
   }
 
-  const hasDied = (player) => {
-    // console.log(player)
+  const hasHitByCar = (player=characterState) => {
+    let killedByCar = carArrSet.filter((car)=> (car.x === player.x && car.y === player.y))
+    return !!(killedByCar[0])
   }
 
   const getBadges = () => {
@@ -37,6 +40,13 @@ function Game() {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({"status": "Unlocked"})})
   }
+
+  useInterval(()=>{
+    if (hasReachedGoal()){setCharacterState(defaultPlayerState)}
+    if (hasHitByCar()){setCharacterState(defaultPlayerState)}
+  }, 100)
+
+
 
 
   useEffect(() => {
@@ -49,7 +59,7 @@ function Game() {
     <>
       <div className='points-board'>{}</div>
       <World characterState={characterState} carArrSet={carArrSet} />
-      <Inputs characterState={characterState}/>
+      <Inputs characterState={characterState} setCharacterState={setCharacterState}/>
     </>
   )
 }
