@@ -1,23 +1,12 @@
-import React, {useCallback} from 'react'
-import { atom, useRecoilState, useRecoilValue} from "recoil";
-
+import { useState, useCallback} from 'react'
 import { useInterval } from "../hooks/useInterval"
 
-function Player({src}) {
-    const playerState = atom({
-        key: 'playerState',
-        default: {
-            x: 1,
-            y: 5,
-            dead: false,
-            id: Math.random()
-        },
-    })
-    
-    const player = useRecoilValue(playerState)
+export default function Player({characterState}) {
+  
 
-    let xVar = player.x
-    let yVar = player.y
+
+    let xVar = characterState.x
+    let yVar = characterState.y
 
     //https://www.omnicalculator.com/math/linear-independence
 
@@ -29,11 +18,9 @@ function Player({src}) {
 
   return (
     <img
-    src={src}
-    alt="test"
+    src={characterState.character}
+    alt="character"
     className={'player'}
     style={{left:`${xderiv}%`, top:`${yDeriv}%`, zIndex:1000}}/>
   )
 }
-
-export default Player
