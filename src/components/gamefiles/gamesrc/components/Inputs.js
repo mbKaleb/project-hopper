@@ -1,27 +1,10 @@
 import React, { useEffect, useCallback, useRef } from "react";
-import { atom, useRecoilState, useRecoilValue } from "recoil";
-import { frog } from "./images";
 
 
-function Inputs() {
-
-  //player location data in and atom//----->
-  const playerState = atom({
-    key: "playerState",
-    default: {
-        x: 1,
-        y: 5,
-        id: Math.random()
-        },
-  }); const [player, setPlayer] = useRecoilState(playerState)
-  
-  const allowInputState = atom({
-    key: "allowInputState",
-    default: true,
-  }); const [allowInput, setAllowInput] = useRecoilState(allowInputState)
-
+function Inputs({characterState}) {
+  let {id, x, y, character, allowInput } = characterState
+ 
   // const gameOver = useRecoilValue(atom({key: "gameOverState"}))//we use value because this value will not be change on this file
-
 
   //timer state to allow input 
   let timer = useRef(false); //useRef to survive re-render
@@ -30,9 +13,6 @@ function Inputs() {
       clearTimeout(timer.current) //clear time on re-render of timer
     };
   }, [timer]);
-
-  
-
 
 //useCallback to not reinstanchiate on each render
   const controlHandler = useCallback((e) => {
@@ -43,50 +23,30 @@ function Inputs() {
     if (!allowInput) {return}
     if (null) {return}
 
-    setAllowInput(false)
+    allowInput = false
     timer.current = setTimeout(() => {
-      setAllowInput(true);
+      allowInput = true
     }, 500);
-    
-      if(e.keyCode === 37 && player.y > 1) {
+      if(e.keyCode === 37 && y > 1) {
         //Left
-        console.log(player)
-        setPlayer({
-        x: player.x,
-        y: player.y-1,
-        })}
-
-    else if(e.keyCode === 39 && player.y < 9) {
+      y--
+      }
+    else if(e.keyCode === 39 && y < 9) {
         //Right
-        console.log(player)
-        setPlayer({
-        x: player.x,
-        y: player.y+1,
-        })
+        y++
     }
     else if(e.keyCode === 38) {
-        //Up
-        console.log(player)
-        setPlayer({
-        x: player.x+1,
-        y: player.y,
-        })
+      x++
     }
-    else if(e.keyCode === 40 && player.x >1) {
-        //Down
-        console.log(player)
-        setPlayer({
-        x: player.x-1,
-        y: player.y,
-        })
-      }
+    else if(e.keyCode === 40 && x >1) {
+      x--
+    }
 
-
-      setAllowInput(false)
+      allowInput = false
       timer.current = setTimeout(() => {
-        setAllowInput(true);
+        allowInput = true
       }, 300)
-      setAllowInput(false)
+      allowInput = false
     })
 
   useEffect(() => {
@@ -95,11 +55,7 @@ function Inputs() {
       window.removeEventListener("keydown", controlHandler);
     };
   }, [controlHandler]);
-    
-    
     return (null);
-  
-  
 }
 
 export default Inputs;

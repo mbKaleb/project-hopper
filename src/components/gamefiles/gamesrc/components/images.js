@@ -1,4 +1,4 @@
-import grass from "../images/grass.png";
+import grass from "../images/grass.png"
 import frog from "../images/frog.png";
 import car from"../images/car.png";
 import road from"../images/road.png";

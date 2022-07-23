@@ -5,23 +5,23 @@ import World from './gamesrc/components/World'
 
 import { baseURL } from '../constants';
 
-
-import {
-  frog,
-  car,
-} from "../Images.js"
-
+import { grass, frog, car  } from './gamesrc/components/images';
 
 function Game() {
 
   const [characterState, setCharacterState] = useState({
     id: 1,
-    x:0,
-    y:0,
-    character: frog
+    x:1,
+    y:5,
+    character: frog,
+    allowInput:false
   })
-
-  const [carArrSet, setCarArrSet] = useState([])
+  const carInstance = (x,y=9, speed) => {return({id:{x,y},x,y,speed,src:car})}
+  const [carArrSet, setCarArrSet] = useState([
+    carInstance(3,10,140),
+    carInstance(5,3,170),
+    carInstance(7,8,130)
+  ]);
 
   const hasReachedGoal = (player) => { //check if frog has x of a high enough number/specific number
     return player.x > 9;
@@ -41,6 +41,7 @@ function Game() {
 
   useEffect(() => {
     getBadges()
+    characterState.allowInput = true
   },[]);
 
 

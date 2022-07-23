@@ -12,15 +12,16 @@ import {
 // Inside world we have the map, player, and moving objects
 
 
-function World({ characterState, carArrSet}) {
-  
+function World({ characterState, carArrSet }) {
+
 
 
 
   return (
     <div className="world">
     <Map />
-    <Player {characterState}/>
+    {carArrSet?.map((car) => <Car carInstance={car}/>)}
+    <Player characterState={characterState}/>
     </div>
   )
 }
