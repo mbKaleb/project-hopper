@@ -1,4 +1,4 @@
-import React from 'react'
+import { useState, useEffect } from 'react'
 import Map from './Map'
 import Player from './Player'
 import Car from './Car'
@@ -12,16 +12,15 @@ import {
 // Inside world we have the map, player, and moving objects
 
 
-function World() {
-  // const [playerSkin, setPlayerSkin] = useState()
+function World({ characterState, carArrSet}) {
+  
+
+
 
   return (
     <div className="world">
     <Map />
-    <Player src={frog} x={1} y={1}/>
-    <Car src={car} x={1} y={9} />
-    
-    
+    <Player {characterState}/>
     </div>
   )
 }

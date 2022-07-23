@@ -1,55 +1,55 @@
-import React, { useEffect } from 'react'
-import {atom, useRecoilState, useRecoilValue} from "recoil";
+import { useState, useEffect } from 'react'
+
 import Inputs from './gamesrc/components/Inputs'
 import World from './gamesrc/components/World'
+
 import { baseURL } from '../constants';
-import { frog } from './gamesrc/components/images';
 
 
+import {
+  frog,
+  car,
+} from "../Images.js"
 
 
 function Game() {
 
-  //player states
-  const playerState = atom({key: "playerState", default: {}})
-  const [player, setPlayer] = useRecoilState(playerState)
-  
+  const [characterState, setCharacterState] = useState({
+    id: 1,
+    x:0,
+    y:0,
+    character: frog
+  })
 
-  // const [gameOver, setGameOver] = useRecoilState(
-  //   atom({ key: "gameOverState", default: false})
-  // )
+  const [carArrSet, setCarArrSet] = useState([])
 
-  //End
   const hasReachedGoal = (player) => { //check if frog has x of a high enough number/specific number
     return player.x > 9;
   }
 
-    useEffect(() => {
-      if(hasReachedGoal(player)){
-        setPlayer({...player, x:1, y:4})
-      }
-    }, [player])
-  
-  useEffect(() => {
+  const hasDied = (player) => {
+    // console.log(player)
+  }
+
+  const getBadges = () => {
     fetch(`${baseURL}/badges/1`,{
       method: `PATCH`,
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({"status": "Unlocked"})})
+  }
+
+
+  useEffect(() => {
+    getBadges()
   },[]);
 
 
   return (
     <>
-      <World />
-      <Inputs />
+      <div className='points-board'>{}</div>
+      <World characterState={characterState} carArrSet={carArrSet} />
+      <Inputs characterState={characterState}/>
     </>
   )
 }
 export default Game
-/*
-fetch(`${baseURL}/leaderboard`,{
-      method: `POST`, 
-      header: {'Content-Type': 'application/json'},
-      body: JSON.stringify(),
-    })
-  },[]);*/

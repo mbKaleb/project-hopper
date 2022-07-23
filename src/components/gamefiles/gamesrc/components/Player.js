@@ -2,9 +2,6 @@ import { useState, useCallback} from 'react'
 import { useInterval } from "../hooks/useInterval"
 
 export default function Player({characterState}) {
-  
-
-
     let xVar = characterState.x
     let yVar = characterState.y
 
