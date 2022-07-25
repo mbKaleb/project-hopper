@@ -9,7 +9,7 @@ import { baseURL } from '../constants';
 
 import { grass, frog, car  } from './gamesrc/components/images';
 
-function Game() {
+export default function Game() {
   const defaultPlayerState = {
     id: 1,
     x:1,
@@ -20,9 +20,13 @@ function Game() {
   const [characterState, setCharacterState] = useState({...defaultPlayerState})
   const carInstance = (x,y=9, speed) => {return({id:{x,y},x,y,speed,src:car})}
   const [carArrSet, setCarArrSet] = useState([
-    carInstance(3,10,140),
-    carInstance(5,3,170),
-    carInstance(7,8,130)
+    carInstance( 3,10, 125 ),
+    carInstance( 3, 2, 125 ),
+    carInstance( 5, 2, 180 ),
+    carInstance( 5, 6, 180 ),
+    carInstance( 5, 10, 180 ),
+    carInstance( 5, 14, 180 ),
+    carInstance( 7, 8, 105 ),
   ]);
 
   const hasReachedGoal = (player=characterState) => {
@@ -63,4 +67,3 @@ function Game() {
     </>
   )
 }
-export default Game
